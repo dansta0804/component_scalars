@@ -2,7 +2,7 @@
 
 import sys, os, argparse
 
-def calculate_dot_product(output, vectors: str, filename: str):
+def calculate_dot_product(output, vectors: str, filename: str, frmt):
     split_vector = vectors.strip().split()
     if len(split_vector) % 2 != 0:
         print(f"Issue: vector component count is not even!\n")
@@ -27,10 +27,11 @@ def calculate_dot_product(output, vectors: str, filename: str):
         for a, b in zip(first_part, second_part):
             mul_results.append(a * b)
 
-        print(f"Result (dot product): {sum(mul_results)}\n")
-        return sum(mul_results)
+        dot_product = sum(mul_results)
+        print(f"Result (dot product): {format(dot_product, frmt)}\n")
+        return dot_product
 
-def handle_input(output, files):
+def handle_input(output, files, frmt):
     if isinstance(files, str):
         files = [files]
 
@@ -52,7 +53,7 @@ def handle_input(output, files):
                 continue
             try:
                 print(f"Working with vectors: {line}")
-                results.append(calculate_dot_product(output, line, file))
+                results.append(calculate_dot_product(output, line, file, frmt))
             except ValueError as e:
                 sys.stderr.write(str(e) + '\n')
 
@@ -71,8 +72,10 @@ if __name__ == "__main__":
         "files",
         nargs = '+',  # '+' means one or more arguments
         help = "Path(s) to input file(s)")
+    parser.add_argument("-f", "--format", choices=["5.6g", "3.3e",
+                                                   "4.4f"], default="5.6g")
 
     args = parser.parse_args()
     output_file = (
         str(os.path.splitext(os.path.basename(args.files[0]))[0] + ".rez"))
-    handle_input(output_file, args.files)
+    handle_input(output_file, args.files, args.format)
