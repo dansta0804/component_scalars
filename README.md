@@ -1,1 +1,2 @@
-# component_scalars
+# Calculator of dot products
+
