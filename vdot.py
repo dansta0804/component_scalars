@@ -1,15 +1,11 @@
 #!/usr/bin/env python3
 
-import sys, os
-
-INPUT_DIR = "Tests/Inputs/"
-OUTPUT_DIR = "Tests/Outputs/Actual/"
+import sys, os, argparse
 
 def calculate_dot_product(output, vectors: str, filename: str):
     split_vector = vectors.strip().split()
     if len(split_vector) % 2 != 0:
-        with open(output, "a") as out_file:
-            out_file.write(f"Issue: vector component count is not even!\n\n")
+        print(f"Issue: vector component count is not even!\n")
         return None
     else:
         mid = len(split_vector) // 2
@@ -19,10 +15,8 @@ def calculate_dot_product(output, vectors: str, filename: str):
             try:
                 val = float(val)
             except ValueError:
-                with open(output, "a") as out_file:
-                    filename = os.path.basename(filename)
-                    out_file.write(f"Value '{val}' does not match numeric"
-                                   f" syntax in {filename}!\n\n")
+                print(f"Value '{val}' does not match numeric syntax in"
+                      f"{filename}!\n")
                 return None
 
             if i < mid:
@@ -33,8 +27,7 @@ def calculate_dot_product(output, vectors: str, filename: str):
         for a, b in zip(first_part, second_part):
             mul_results.append(a * b)
 
-        with open(output, "a") as out_file:
-            out_file.write(f"Result (dot product): {sum(mul_results)}\n\n")
+        print(f"Result (dot product): {sum(mul_results)}\n")
         return sum(mul_results)
 
 def handle_input(output, files):
@@ -43,11 +36,10 @@ def handle_input(output, files):
 
     for file in files:
         results = []
+        print(f"\nProcessing {file}...")
+
         if not os.path.exists(file):
-            file = os.path.basename(file)
             print(f"Cannot open '{file}': No such file!")
-            with open(output, "a") as out_file:
-                out_file.write(f"Cannot open '{file}': No such file!\n")
             continue
 
         with open(file, 'r') as f:
@@ -59,15 +51,28 @@ def handle_input(output, files):
             if not line or line.startswith('#'):
                 continue
             try:
-                with open(output, "a") as out_file:
-                    out_file.write(str(f"Working with vectors: {line}\n"))
+                print(f"Working with vectors: {line}")
                 results.append(calculate_dot_product(output, line, file))
             except ValueError as e:
                 sys.stderr.write(str(e) + '\n')
 
-        with open(output, "a") as out_file:
-            out_file.write(
-                    str(f"# {len([sum for sum in results if sum is not None])} "
-                        f"vector pair(-s) was(were) multiplied in total.\n"))
+        try:
+            print(str(f"# {len([sum for sum in results if sum is not None])} "
+                        f"vector pair(-s) was(were) multiplied in total."))
+        except (IOError, OSError) as e:
+            print(f"Error writing to file '{output}': {e}...")
 
     return ""
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description = "Process one or more input files.")
+    parser.add_argument(
+        "files",
+        nargs = '+',  # '+' means one or more arguments
+        help = "Path(s) to input file(s)")
+
+    args = parser.parse_args()
+    output_file = (
+        str(os.path.splitext(os.path.basename(args.files[0]))[0] + ".rez"))
+    handle_input(output_file, args.files)
