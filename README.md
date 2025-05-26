@@ -26,6 +26,7 @@ pip install git+https://github.com/dansta0804/component_scalars.git
 | Method name   | Description    | Parameters    | Output    |
 |---------------|----------------|----------------|----------------|
 | ``calculate_dot_product (output, str vectors, str filename, frmt)``  | Calculates the dot product of two vectors in a string. | ``vectors:`` a string with vector elements separated by space; ``filename:`` - name of the file (used for error messages); ``frmt`` - output format string (e.g., '5.6g'). | Dot product as float or None if error.|
+| ``handle_input (output, files, frmt)``  | Processes input files and computes dot products from each line. | ``files:`` - a list of input file paths; ``frmt`` - output format string (e.g., '5.6g'). | Nothing. Prints results to stdout.|
 
 ---
 
