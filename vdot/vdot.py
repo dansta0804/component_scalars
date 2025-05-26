@@ -31,7 +31,7 @@ def calculate_dot_product(output, vectors: str, filename: str, frmt):
         print(f"Result (dot product): {format(dot_product, frmt)}\n")
         return dot_product
 
-def handle_input(output, files, frmt):
+def main(output, files, frmt):
     if isinstance(files, str):
         files = [files]
 
@@ -78,4 +78,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     output_file = (
         str(os.path.splitext(os.path.basename(args.files[0]))[0] + ".rez"))
-    handle_input(output_file, args.files, args.format)
+    main(output_file, args.files, args.format)
