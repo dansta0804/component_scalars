@@ -18,7 +18,7 @@ Component Based System Engineering
 
 ## Installation
 ```
-
+pip install git+https://github.com/dansta0804/component_scalars.git
 ```
 ---
 
