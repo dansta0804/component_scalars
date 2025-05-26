@@ -10,9 +10,12 @@ setup(
     author_email = "danielestasiunaite@gmail.com",
     url = "https://github.com/dansta0804/component_scalars.git",
     packages = find_packages(),
-    install_requires = [
-        # dependencies
-    ],
+    install_requires = [],
+    entry_points = {
+        "console_scripts": [
+            "vdot = vdot.main:main",
+        ],
+    },
     classifiers = [
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
