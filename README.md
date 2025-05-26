@@ -22,6 +22,13 @@ Component Based System Engineering
 ```
 ---
 
+## Methods
+| Method name   | Description    | Parameters    | Output    |
+|---------------|----------------|----------------|----------------|
+| ``calculate_dot_product (output, str vectors, str filename, frmt)``  | Calculates the dot product of two vectors in a string. | ``vectors:`` a string with vector elements separated by space; ``filename:`` - name of the file (used for error messages); ``frmt`` - output format string (e.g., '5.6g'). | Dot product as float or None if error.|
+
+---
+
 ## Usage
 The installed component can be used in multiple ways, where different `vdot` program usages are described below. Input files that are used to explain program usage are available in directory `Inputs`:
 **1. One input file**.
