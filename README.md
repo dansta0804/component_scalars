@@ -13,7 +13,7 @@ The `vdot` component is an educational tool for upper secondary school (11-12) s
 
 ---
 
-## Features
+## ✨ Features
 The Python component processes text files containing vectors, computes scalar products and displays the results in a specified format.
 
 #### Input
@@ -29,13 +29,13 @@ The result (the scalar product) is represented using the default format `5.6g`, 
 
 ---
 
-## Installation
+## ⚙️ Installation
 ```
 pip install git+https://github.com/dansta0804/component_scalars.git
 ```
 ---
 
-## Methods
+## 📝 Methods
 | Method name   | Description    | Parameters    | Output    |
 |---------------|----------------|----------------|----------------|
 | ``calculate_dot_product (output, str vectors, str filename, frmt)``  | Calculates the dot product of two vectors in a string. | ``vectors:`` a string with vector elements separated by space; ``filename:`` - name of the file (used for error messages); ``frmt`` - output format string (e.g., '5.6g'). | Dot product as float or None if error.|
@@ -43,7 +43,7 @@ pip install git+https://github.com/dansta0804/component_scalars.git
 
 ---
 
-## Usage
+## ❓ Usage
 The installed component can be used in multiple ways, where different `vdot` program usages are described below. Input files that are used to explain program usage are available in directory `Inputs`:
 **1. One input file**.
 The program reads one provided file that contains vector values.
@@ -164,5 +164,5 @@ Result (dot product): 8.663e+01
 ```
 ---
 
-## CHANGELOG
+## 🔍 CHANGELOG
 ---
