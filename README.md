@@ -7,19 +7,26 @@ Danielė Stasiūnaitė, IFM 4/2 gr.
 Component Based System Engineering
 
 ---
+
 ## About the component
 The `vdot` component is an educational tool for upper secondary school (11-12) students who want to better understand the concept of vector scalar product and improve their Python programming language skills by developing programs that integrate the developed component.
+
 ---
 
 ## Features
-The Python component processes text files containing vectors, computes scalar products and displays the results in a specified format. The component is able to process input files containing:
+The Python component processes text files containing vectors, computes scalar products and displays the results in a specified format.
+
+#### Input
+The component is able to process input files containing:
 - Comment lines (they do not contain vector values). These lines start symbol `#`;
 - Empty lines;
 - Vector values that are provided in a scientific notation (for example, `-5.125e19`);
 - Lines with non-numeric vector values (for example, `6d`);
 - Odd number of vector values in a line (in such case scalar product cannot be computed).
 
+#### Result
 The result (the scalar product) is represented using the default format `5.6g`, which indicates that small numbers are represented using a low decimal expression, very large or very small values are represented using an exponential format (scientific notation).
+
 ---
 
 ## Installation
