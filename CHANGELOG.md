@@ -1,3 +1,9 @@
+commit 751a6848a01bd43e2e78d71bcca1803b96292970
+Author: Danielė <97364205+dansta0804@users.noreply.github.com>
+Date:   Tue May 27 22:08:31 2025 +0300
+
+    Updated CHANGELOG.md
+
 commit f9de92101057992fb15c8ad6e4a3ed8b13c6f48d
 Author: Danielė <97364205+dansta0804@users.noreply.github.com>
 Date:   Tue May 27 22:06:50 2025 +0300
