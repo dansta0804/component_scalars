@@ -35,14 +35,6 @@ pip install git+https://github.com/dansta0804/component_scalars.git
 ```
 ---
 
-## 📝 Methods
-| Method name   | Description    | Parameters    | Output    |
-|---------------|----------------|----------------|----------------|
-| ``calculate_dot_product (output, str vectors, str filename, frmt)``  | Calculates the dot product of two vectors in a string. | ``vectors:`` a string with vector elements separated by space; ``filename:`` - name of the file (used for error messages); ``frmt`` - output format string (e.g., '5.6g'). | Dot product as float or None if error.|
-| ``handle_input (output, files, frmt)``  | Processes input files and computes dot products from each line. | ``files:`` - a list of input file paths; ``frmt`` - output format string (e.g., '5.6g'). | Nothing. Prints results to stdout.|
-
----
-
 ## ❓ Usage
 The installed component can be used in multiple ways, where different `vdot` program usages are described below. Input files that are used to explain program usage are available in directory `Inputs`:
 **1. One input file**.
@@ -162,6 +154,14 @@ Result (dot product): 8.663e+01
 # 3 vector pair(-s) was(were) multiplied in total.
 
 ```
+---
+
+## 📝 Methods
+| Method name   | Description    | Parameters    | Output    |
+|---------------|----------------|----------------|----------------|
+| ``calculate_dot_product (output, str vectors, str filename, frmt)``  | Calculates the dot product of two vectors in a string. | ``vectors:`` a string with vector elements separated by space; ``filename:`` - name of the file (used for error messages); ``frmt`` - output format string (e.g., '5.6g'). | Dot product as float or None if error.|
+| ``handle_input (output, files, frmt)``  | Processes input files and computes dot products from each line. | ``files:`` - a list of input file paths; ``frmt`` - output format string (e.g., '5.6g'). | Nothing. Prints results to stdout.|
+
 ---
 
 ## 🔍 CHANGELOG
