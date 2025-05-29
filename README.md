@@ -165,4 +165,6 @@ Result (dot product): 8.663e+01
 ---
 
 ## 🔍 CHANGELOG
+All the changes are described in the file `CHANGELOG.md`.
+
 ---
